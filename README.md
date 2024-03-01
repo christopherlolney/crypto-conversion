@@ -1,6 +1,5 @@
 # crypto-conversion
 This repo is for converting holdings into different crypto currencies
-(More importantly this is a personal experimentation repo for using 3rd party http handlers, go tests, and float math)
 
 
 This endpoint provides up-to-the-minute crypto exchange rates relative
