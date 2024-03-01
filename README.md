@@ -25,3 +25,7 @@ $30.00 => 0.0160 ETH
 
 This output tells us: Of our 100$ holdings, 70% of that is 70$, which
 buys 0.0025 BTC, and 30% of our holdings is 30$, which buys 0.016 ETH.
+
+
+Input: `go run cmd/arg/main.go 100 BTC ETH`
+Testing: `go test internal/handlers/currency_handler_test.go`
