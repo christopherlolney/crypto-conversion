@@ -11,6 +11,10 @@ import (
 	"time"
 )
 
+type CoinBaseServiceInterface interface {
+	GetExchangeRates(ctx context.Context, holding_type string) (*CoinbaseExchangeResponse, error)
+}
+
 type CoinBaseService struct {
 	host       string
 	HttpClient *http.Client
@@ -53,7 +57,6 @@ func (c *CoinBaseService) GetExchangeRates(ctx context.Context, holding_type str
 	}
 	defer resp.Body.Close()
 
-	//TODO check response status code
 	if resp.StatusCode != http.StatusOK {
 		return nil, errors.New(fmt.Sprintf("Failed to get successful response from coinbase server please check network connections and try again \n Status: %d", resp.StatusCode))
 	}

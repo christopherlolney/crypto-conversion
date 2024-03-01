@@ -23,16 +23,15 @@ func main() {
 	if err != nil {
 		logger.Fatalln(err)
 	}
-	if holdings <= 0 {
-		logger.Fatalln("Holdings needs to be a positive value")
 
-	}
 	currencyType70 := args[2]
 
 	currencyType30 := args[3]
 
 	coinbaseClient := clients.New()
 
-	handlers.HandleConversion(ctx, coinbaseClient, holdings, currencyType70, currencyType30)
-
+	err = handlers.HandleConversion(ctx, &coinbaseClient, holdings, currencyType70, currencyType30)
+	if err != nil {
+		logger.Fatalln(err)
+	}
 }
